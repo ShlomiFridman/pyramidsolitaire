@@ -1,0 +1,44 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+Label.selected{
+	-fx-border-color: blue;
+    -fx-border-radius: 7px;
+	-fx-border-width: 0.5;
+}
+.drawPane{
+	-fx-border-style:hidden solid solid hidden;
+	-fx-border-color: gray;
+    -fx-border-radius: 0 0 7px 0;
+	-fx-border-width: 1;
+	-fx-background-color:#8fbc72;
+	-fx-background-radius: 0 0 10px 0;
+}
+.board{
+	-fx-background-color:#bfdbae;
+}
+Button{
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent;
+}
+Button.resetBtn{
+	-fx-background-color:#5d67b8;
+	-fx-text-fill:white;
+}
+Button.resetBtnHover{
+	-fx-background-color:#4d67b8;
+}
+
+Button.drawBtn{
+	-fx-background-color:#6d67b8;
+	-fx-text-fill:white;
+}
+Button.drawBtnHover{
+	-fx-background-color:#7d67b8;
+}
+
+Button.resetBtnClicked{
+	-fx-background-color:#3d67b8;
+}
+Button.drawBtnClicked{
+	-fx-background-color:#8d67b8;
+}
