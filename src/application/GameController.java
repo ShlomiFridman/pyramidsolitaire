@@ -125,6 +125,7 @@ public class GameController {
 	private boolean cardDown(Label label) {
 		Card card = getCard(label);
 		if (card.getRow()<0 && card.getPos()==first.getPos()) return false;
+		drag=false;
 		if ( Rank.is13(first, card) && ((first.isReallyFree() && card.isReallyFree()) || (first.isFree()&card.isFree() && Math.abs(first.getRow()-card.getRow())==1 && Math.abs(card.getPos()-first.getPos())<2 && (card.isReallyFree() || first.isReallyFree())))) {
 			fade(card);
 			fade(first);
