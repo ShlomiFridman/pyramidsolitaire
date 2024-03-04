@@ -5,7 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import javafx.animation.FadeTransition;
-import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -125,7 +124,6 @@ public class GameController {
 	private boolean cardDown(Label label) {
 		Card card = getCard(label);
 		if (card.getRow()<0 && card.getPos()==first.getPos()) return false;
-		drag=false;
 		if ( Rank.is13(first, card) && ((first.isReallyFree() && card.isReallyFree()) || (first.isFree()&card.isFree() && Math.abs(first.getRow()-card.getRow())==1 && Math.abs(card.getPos()-first.getPos())<2 && (card.isReallyFree() || first.isReallyFree())))) {
 			fade(card);
 			fade(first);
@@ -170,6 +168,9 @@ public class GameController {
 		});
 		free(card);
 		card.getLabel().setMouseTransparent(true);
+		// if was in draw pane, remove it
+		if (card.getRow() == -1)
+			drawPane.removeCard(card);
 		fadeIn.play();
 	}
 	
